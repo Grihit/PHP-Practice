@@ -7,11 +7,11 @@ if (file_exists($target_file)) {
   echo "Sorry, file already exists.";
   $uploadOk = 0;
 }
-if ($_FILES["upload"]["size"] > 5*1024*1024) {
+else if ($_FILES["upload"]["size"] > 5*1024*1024) {
   echo "Sorry, your file is larger than 5MB. <br>";
   $uploadOk = 0;
 }
-if($FileType != "pdf") {
+else if($FileType != "pdf") {
   echo "Sorry, only PDF is allowed.";
   $uploadOk = 0;
 }
@@ -24,4 +24,3 @@ if ($uploadOk == 0) {
     echo "Sorry, there was an error uploading your file.";
   }
 }
-?>
